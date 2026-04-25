@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Biodata Interaktif Dwi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -21,11 +22,12 @@
       background-color: #fff;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      width: 400px;
+      width: 90%;          /* fleksibel sesuai layar */
+      max-width: 400px;    /* batas maksimal */
       padding: 20px;
       text-align: left;
       margin: 30px auto;
-      display: none; /* disembunyikan dulu */
+      display: none;
       animation: slideUp 1.5s ease;
     }
     .card img {
@@ -82,7 +84,6 @@
   <button onclick="tampilkanCV()">Lihat Biodata Lengkap</button>
 
   <div class="card" id="cv">
-    <!-- Pastikan kamu upload file foto.jpg ke repo -->
     <img src="foto.jpg.jpg" alt="Foto Profil">
     <h2>Dwi Nur Ramadhani Subagyo</h2>
     <p><strong>Tempat, Tanggal Lahir:</strong> Palangka Raya, 26 September 2007</p>
@@ -99,7 +100,7 @@
   <script>
     function tampilkanCV() {
       const cv = document.getElementById("cv");
-      if (cv.style.display === "none") {
+      if (cv.style.display === "none" || cv.style.display === "") {
         cv.style.display = "block";
       } else {
         cv.style.display = "none";
