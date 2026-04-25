@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Biodata Interaktif Dwi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #74ebd5, #ACB6E5, #f9f9f9, #e0c3fc);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 400px;
+      padding: 20px;
+      text-align: left;
+      margin: 30px auto;
+      display: none; /* disembunyikan dulu */
+      animation: slideUp 1.5s ease;
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #74ebd5;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      font-size: 15px;
+      color: #555;
+      margin: 5px 0;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    button {
+      margin-top: 50px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0077b6;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+      background-color: #005f87;
+    }
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Datang di Website Dwi</h1>
+  <button onclick="tampilkanCV()">Lihat Biodata Lengkap</button>
+
+  <div class="card" id="cv">
+    <img src="foto.jpg.jpg" alt="Foto Profil">
+    <h2>Dwi Nur Ramadhani Subagyo</h2>
+    <p><strong>Tempat, Tanggal Lahir:</strong> Palangka Raya, 26 September 2007</p>
+    <p><strong>Hobi:</strong> Main Game & Mendengarkan Musik</p>
+    <p><strong>Cita-cita:</strong> Web Developer</p>
+    <p><strong>Pendidikan:</strong> SMA</p>
+    <p><strong>Keahlian:</strong> HTML dasar, Desain Digital, Microsoft Word, PowerPoint, Excel</p>
+    <p><strong>Instagram:</strong> 
+      <a href="https://instagram.com/auzo_wb" target="_blank">@auzo_wb</a>
+    </p>
+    <p><strong>Email:</strong> dwinurramadani17@gmail.com</p>
+  </div>
+
+  <script>
+    function tampilkanCV() {
+      document.getElementById("cv").style.display = "block";
+    }
+  </script>
+</body>
+</html>
