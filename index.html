@@ -82,6 +82,7 @@
   <button onclick="tampilkanCV()">Lihat Biodata Lengkap</button>
 
   <div class="card" id="cv">
+    <!-- Pastikan kamu upload file foto.jpg ke repo -->
     <img src="foto.jpg.jpg" alt="Foto Profil">
     <h2>Dwi Nur Ramadhani Subagyo</h2>
     <p><strong>Tempat, Tanggal Lahir:</strong> Palangka Raya, 26 September 2007</p>
@@ -97,7 +98,12 @@
 
   <script>
     function tampilkanCV() {
-      document.getElementById("cv").style.display = "block";
+      const cv = document.getElementById("cv");
+      if (cv.style.display === "none") {
+        cv.style.display = "block";
+      } else {
+        cv.style.display = "none";
+      }
     }
   </script>
 </body>
