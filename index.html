@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Biodata Interaktif Dwi</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Dwi</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,6 +13,7 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      transition: background 0.5s, color 0.5s;
     }
     @keyframes gradientMove {
       0% {background-position: 0% 50%;}
@@ -22,13 +24,14 @@
       background-color: #fff;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      width: 90%;          /* fleksibel sesuai layar */
-      max-width: 400px;    /* batas maksimal */
+      width: 90%;
+      max-width: 400px;
       padding: 20px;
       text-align: left;
       margin: 30px auto;
       display: none;
       animation: slideUp 1.5s ease;
+      transition: background 0.5s, color 0.5s;
     }
     .card img {
       width: 120px;
@@ -59,7 +62,7 @@
       text-decoration: underline;
     }
     button {
-      margin-top: 50px;
+      margin: 15px;
       padding: 12px 25px;
       font-size: 16px;
       border: none;
@@ -77,11 +80,43 @@
       from {transform: translateY(50px); opacity: 0;}
       to {transform: translateY(0); opacity: 1;}
     }
+    /* Skill bar */
+    .skill {
+      margin: 10px 0;
+    }
+    .skill-name {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .skill-bar {
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-level {
+      height: 12px;
+      background: #0077b6;
+      width: 0;
+      transition: width 2s ease;
+    }
+    /* Dark mode */
+    body.dark {
+      background: #121212;
+      color: #eee;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+      color: #eee;
+    }
+    body.dark a {
+      color: #74ebd5;
+    }
   </style>
 </head>
 <body>
   <h1>Selamat Datang di Website Dwi</h1>
   <button onclick="tampilkanCV()">Lihat Biodata Lengkap</button>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
   <div class="card" id="cv">
     <img src="foto.jpg.jpg" alt="Foto Profil">
@@ -90,7 +125,19 @@
     <p><strong>Hobi:</strong> Main Game & Mendengarkan Musik</p>
     <p><strong>Cita-cita:</strong> Web Developer</p>
     <p><strong>Pendidikan:</strong> SMA</p>
-    <p><strong>Keahlian:</strong> HTML dasar, Desain Digital, Microsoft Word, PowerPoint, Excel</p>
+    <p><strong>Keahlian:</strong></p>
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="skill-bar"><div class="skill-level" style="width:80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Desain Digital</div>
+      <div class="skill-bar"><div class="skill-level" style="width:70%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Microsoft Office</div>
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
     <p><strong>Instagram:</strong> 
       <a href="https://instagram.com/auzo_wb" target="_blank">@auzo_wb</a>
     </p>
@@ -102,9 +149,19 @@
       const cv = document.getElementById("cv");
       if (cv.style.display === "none" || cv.style.display === "") {
         cv.style.display = "block";
+        // animasi skill bar
+        const bars = document.querySelectorAll(".skill-level");
+        bars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = "0";
+          setTimeout(() => { bar.style.width = width; }, 100);
+        });
       } else {
         cv.style.display = "none";
       }
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
     }
   </script>
 </body>
