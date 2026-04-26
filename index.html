@@ -6,8 +6,6 @@
   <title>Portfolio Dwi</title>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Ikon (Font Awesome) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -45,30 +43,15 @@
       transition: transform 0.3s ease;
     }
     .btn:hover { transform: scale(1.05); background: #005f87; }
-    section {
-      padding: 80px 20px; text-align: center;
-      opacity: 0; transform: translateY(50px);
-      transition: all 1s ease;
-    }
+    section { padding: 80px 20px; text-align: center; opacity: 0; transform: translateY(50px); transition: all 1s ease; }
     section.visible { opacity: 1; transform: translateY(0); }
-    .skills {
-      display: flex; justify-content: center; gap: 30px; margin-top: 20px;
-    }
-    .skill-icon {
-      font-size: 40px; color: #0077b6;
-      transition: transform 0.3s ease;
-    }
-    .skill-icon:hover { transform: scale(1.2); color: #005f87; }
     footer {
       background: #0077b6; color: #fff; text-align: center; padding: 20px;
-      opacity: 0; transform: translateY(50px); transition: all 1s ease;
     }
-    footer.visible { opacity: 1; transform: translateY(0); }
-    footer a { color: #fff; margin: 0 10px; font-size: 20px; }
+    footer a { color: #fff; margin: 0 10px; }
     body.dark { background: #121212; color: #eee; }
     body.dark nav { background: #222; }
     body.dark footer { background: #222; }
-    body.dark .skill-icon { color: #74ebd5; }
   </style>
 </head>
 <body>
@@ -93,11 +76,6 @@
     <p><strong>Nama:</strong> Dwi Nur Ramadhani Subagyo</p>
     <p><strong>Hobi:</strong> Main Game & Musik</p>
     <p><strong>Cita-cita:</strong> Web Developer</p>
-    <div class="skills">
-      <i class="fas fa-code skill-icon" title="HTML"></i>
-      <i class="fas fa-paint-brush skill-icon" title="Desain Digital"></i>
-      <i class="fas fa-file-word skill-icon" title="Microsoft Office"></i>
-    </div>
   </section>
 
   <section id="kontak">
@@ -107,17 +85,13 @@
   </section>
 
   <footer>
-    <p>Hubungi saya di:</p>
-    <a href="mailto:dwinurramadani17@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://instagram.com/auzo_wb" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://github.com/dwinurramadani17-hub" target="_blank"><i class="fab fa-github"></i></a>
     <p>&copy; 2026 Dwi Portfolio</p>
   </footer>
 
   <script>
     // Fade-in saat scroll
     function onScroll() {
-      document.querySelectorAll('section, footer').forEach(el => {
+      document.querySelectorAll('section').forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 50) {
           el.classList.add('visible');
